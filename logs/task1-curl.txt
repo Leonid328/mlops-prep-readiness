@@ -1,0 +1,5 @@
+=== TASK1 ===
+{"status":"ok","instance_id":"task1"}
+{"message":"hi","received_at":"2026-11-03T15:59:38.248832+00:00"}
+image prep-task1 248MB (python:3.12-slim)
+container stopped with docker stop, no leftover

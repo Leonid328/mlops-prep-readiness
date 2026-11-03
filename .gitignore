@@ -2,6 +2,6 @@ venv/
 .venv/
 __pycache__/
 .vagrant/
-logs/
+# keep logs/*.txt for submission
 *.pyc
 .DS_Store

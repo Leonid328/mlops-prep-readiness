@@ -1,0 +1,6 @@
+=== TASK2 compose ===
+{"status":"ok","instance_id":"compose"}
+{"key":"test","count":1}
+{"key":"test","count":2}
+{"key":"test","count":3}
+Vagrant: no nested virt on this VPS (/dev/kvm missing). Same Ubuntu host + scripts/provision.sh / docker compose.
