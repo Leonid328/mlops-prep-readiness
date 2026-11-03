@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prep-task1
+data:
+  APP_NAME: prep-task1
+  NOTE: INSTANCE_ID comes from the pod name via Downward API so each replica is unique

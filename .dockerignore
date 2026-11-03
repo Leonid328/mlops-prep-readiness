@@ -1,0 +1,15 @@
+.git
+.gitignore
+venv
+.venv
+__pycache__
+*.pyc
+.vagrant
+k8s
+docs
+README.md
+Vagrantfile
+scripts
+docker-compose.yml
+logs
+*.md

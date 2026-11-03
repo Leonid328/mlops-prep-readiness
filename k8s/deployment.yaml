@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prep-task1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prep-task1
+  template:
+    metadata:
+      labels:
+        app: prep-task1
+    spec:
+      containers:
+        - name: app
+          image: prep-task1:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: INSTANCE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 5
