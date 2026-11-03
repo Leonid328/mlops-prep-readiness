@@ -1,6 +1,8 @@
-=== TASK2 compose ===
-{"status":"ok","instance_id":"compose"}
-{"key":"test","count":1}
-{"key":"test","count":2}
-{"key":"test","count":3}
-Vagrant: no nested virt on this VPS (/dev/kvm missing). Same Ubuntu host + scripts/provision.sh / docker compose.
+=== TASK2 compose Redis by service name ===
+$ curl -s -X POST http://127.0.0.1:8000/increment/lms
+{"key":"lms","count":1}
+$ curl -s -X POST http://127.0.0.1:8000/increment/lms
+{"key":"lms","count":2}
+$ curl -s -X POST http://127.0.0.1:8000/increment/lms
+{"key":"lms","count":3}
+Vagrantfile + provision.sh in repo. No nested virt on this VPS (/dev/kvm missing). Same Ubuntu + compose.

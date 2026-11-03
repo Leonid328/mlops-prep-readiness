@@ -1,5 +1,6 @@
 === TASK1 ===
-{"status":"ok","instance_id":"task1"}
-{"message":"hi","received_at":"2026-11-03T15:59:38.248832+00:00"}
-image prep-task1 248MB (python:3.12-slim)
-container stopped with docker stop, no leftover
+$ curl -s http://127.0.0.1:8000/health
+{"status":"ok","instance_id":"compose"}
+$ curl -s -X POST http://127.0.0.1:8000/echo -H 'Content-Type: application/json' -d '{"message":"hi"}'
+{"message":"hi","received_at":"2026-11-03T18:22:30.326084+00:00"}
+image prep-task1 python:3.12-slim, container stopped, no leftover volumes

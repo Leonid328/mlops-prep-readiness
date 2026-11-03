@@ -1,28 +1,13 @@
-=== pods ===
+=== TASK3 k3s ===
+$ k3s kubectl get pods
 NAME                          READY   STATUS    RESTARTS   AGE
-prep-task1-865974f665-6x8sp   1/1     Running   0          13s
-prep-task1-865974f665-7bp5n   1/1     Running   0          13s
-prep-task1-865974f665-9lc9h   1/1     Running   0          13s
-=== health x5 ===
-{"status":"ok","instance_id":"prep-task1-865974f665-6x8sp"}
-{"status":"ok","instance_id":"prep-task1-865974f665-6x8sp"}
-{"status":"ok","instance_id":"prep-task1-865974f665-6x8sp"}
-{"status":"ok","instance_id":"prep-task1-865974f665-6x8sp"}
-{"status":"ok","instance_id":"prep-task1-865974f665-7bp5n"}
-=== scale 1 ===
-deployment.apps/prep-task1 scaled
-NAME                          READY   STATUS    RESTARTS   AGE
-prep-task1-865974f665-9lc9h   1/1     Running   0          21s
-=== scale 3 ===
-deployment.apps/prep-task1 scaled
-NAME                          READY   STATUS    RESTARTS   AGE
-prep-task1-865974f665-74s6x   1/1     Running   0          10s
-prep-task1-865974f665-9lc9h   1/1     Running   0          31s
-prep-task1-865974f665-jntgc   1/1     Running   0          10s
-=== delete one ===
-deleting prep-task1-865974f665-74s6x
-pod "prep-task1-865974f665-74s6x" deleted from default namespace
-NAME                          READY   STATUS    RESTARTS   AGE
-prep-task1-865974f665-9lc9h   1/1     Running   0          43s
-prep-task1-865974f665-jntgc   1/1     Running   0          22s
-prep-task1-865974f665-pfkt6   1/1     Running   0          11s
+prep-task1-865974f665-9lc9h   1/1     Running   0          142m
+prep-task1-865974f665-jntgc   1/1     Running   0          141m
+prep-task1-865974f665-pfkt6   1/1     Running   0          141m
+$ curl -s http://127.0.0.1:30080/health  (x5)
+{"status":"ok","instance_id":"prep-task1-865974f665-jntgc"}
+{"status":"ok","instance_id":"prep-task1-865974f665-9lc9h"}
+{"status":"ok","instance_id":"prep-task1-865974f665-jntgc"}
+{"status":"ok","instance_id":"prep-task1-865974f665-pfkt6"}
+{"status":"ok","instance_id":"prep-task1-865974f665-jntgc"}
+scale 1 then 3 ok; delete pod -> replacement prep-task1-865974f665-pfkt6
